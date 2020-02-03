@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context=".HomePage" >
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/topimage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:layout_marginTop="35dp"
+                      android:text="HD1"
+                      android:textColor="@android:color/white"
+                      android:textSize="25sp"
+                      android:textStyle="bold" />
+
+                  <Spinner
+                      android:id="@+id/choice_spinner"
+                      android:layout_width="150dp"
+                      android:layout_height="40dp"
+                      android:layout_alignParentBottom="true"
+                      android:layout_centerInParent="true"
+                      android:layout_marginBottom="45dp"
+                      android:background="@drawable/spinner_rounded"
+                      android:focusable="auto"
+                      android:prompt="@string/spinner_prompt"
+                      android:spinnerMode="dialog"
+                      android:textAlignment="center" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="3"
+                      android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/computer"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="Electronics" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical"
+                                  android:paddingLeft="10dp"
+                                  android:paddingRight="10dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/highheels"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="Fashion" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical"
+                                  android:paddingLeft="10dp"
+                                  android:paddingRight="10dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/cinema"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="Entertainment" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="3"
+                      android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/chemistry"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="Education" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical"
+                                  android:paddingLeft="10dp"
+                                  android:paddingRight="10dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/plane"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="Travel" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearclickable"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="100dp"
+                                  android:background="@drawable/custom_border"
+                                  android:orientation="vertical"
+                                  android:paddingLeft="10dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="34dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/fastfood"
+                                        android:tint="@color/colorPrimaryDark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="Food" />
+
+                              </LinearLayout>
+                        </LinearLayout>
+                  </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_marginTop="15dp"
+                      android:paddingTop="5dp"
+                      android:paddingBottom="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:src="@drawable/star"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Featured"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"/>
+                  </LinearLayout>
+            </LinearLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
