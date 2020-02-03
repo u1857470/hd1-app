@@ -1,4 +1,9 @@
 package com.example.hd1app.Models;
 
-public class EducationDeal {
+import java.util.Date;
+
+public class EducationDeal extends Deal {
+    public EducationDeal(String title, String discountCode, int numOfUses, Date expirationDate, boolean expiresIn5days, int likes) {
+        super(title, discountCode, numOfUses, expirationDate, expiresIn5days, likes);
+    }
 }
