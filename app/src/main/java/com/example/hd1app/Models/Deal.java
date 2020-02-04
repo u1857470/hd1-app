@@ -1,22 +1,26 @@
 package com.example.hd1app.Models;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Deal {
     private String title;
     private String discountCode;
     private int numOfUses;
+    private Date dateAdded;
     private Date expirationDate;
-    private boolean expiresIn5days;
     private int likes;
 
-    public Deal(String title, String discountCode, int numOfUses, Date expirationDate, boolean expiresIn5days, int likes) {
+    public Deal(String title, String discountCode, Date expirationDate, int numOfUses, int likes) {
         this.title = title;
         this.discountCode = discountCode;
         this.numOfUses = numOfUses;
+        this.dateAdded = getCurrentDate();
         this.expirationDate = expirationDate;
-        this.expiresIn5days = expiresIn5days;
         this.likes = likes;
+    }
+    public Deal(String title){
+        this.title = title;
     }
 
     public String getTitle() {
@@ -43,6 +47,20 @@ public class Deal {
         this.numOfUses = numOfUses;
     }
 
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
+    }
     public Date getExpirationDate() {
         return expirationDate;
     }
@@ -51,19 +69,8 @@ public class Deal {
         this.expirationDate = expirationDate;
     }
 
-    public boolean isExpiresIn5days() {
-        return expiresIn5days;
-    }
-
-    public void setExpiresIn5days(boolean expiresIn5days) {
-        this.expiresIn5days = expiresIn5days;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
+    private Date getCurrentDate(){
+        Calendar calendar = Calendar.getInstance();
+        return calendar.getTime();
     }
 }
