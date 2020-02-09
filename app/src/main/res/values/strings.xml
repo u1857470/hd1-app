@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">HD1app</string>
     <string name="spinner_prompt">Choose type of the deals</string>
+    <string name="item_title">Item Title</string>
+    <string name="huddersfield_deals_for_you">Huddersfield deals for you!</string>
+    <string name="electronics">Electronics</string>
+    <string name="fashion">Fashion</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="education">Education</string>
+    <string name="travel">Travel</string>
+    <string name="food">Food</string>
+    <string name="nearby_deals">Nearby Deals</string>
+    <string name="featured">Featured</string>
+    <string name="trending">Trending</string>
+    <string name="new_title">New</string>
+    <string name="search_button">search_button</string>
+    <string name="hd1">HD1</string>
+    <string name="menu">menu</string>
     <string-array name="spinner_array">
         <item>Suggestions</item>
         <item>Featured</item>

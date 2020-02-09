@@ -8,44 +8,79 @@
 
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          >
+          android:layout_height="wrap_content" >
             <RelativeLayout
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:background="@drawable/topimage"
+                android:layout_height="120dp"
+                android:background="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-                  <TextView
+                  <LinearLayout
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_centerHorizontal="true"
-                      android:layout_marginTop="35dp"
-                      android:text="HD1"
-                      android:textColor="@android:color/white"
-                      android:textSize="25sp"
-                      android:textStyle="bold" />
-
-                  <Spinner
-                      android:id="@+id/choice_spinner"
-                      android:layout_width="150dp"
-                      android:layout_height="40dp"
+                      android:orientation="horizontal"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginRight="1dp"
+                      android:layout_alignParentRight="true"
+                      android:layout_marginEnd="10dp"
+                      android:layout_alignParentEnd="true">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/search"
+                            android:tint="#949494"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/search_button"/>
+                      <ImageView
+                          android:layout_width="20dp"
+                          android:layout_height="40dp"
+                          android:src="@drawable/menu"
+                          android:tint="#949494"
+                          android:contentDescription="@string/menu"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
                       android:layout_alignParentBottom="true"
-                      android:layout_centerInParent="true"
-                      android:layout_marginBottom="45dp"
-                      android:background="@drawable/spinner_rounded"
-                      android:focusable="auto"
-                      android:prompt="@string/spinner_prompt"
-                      android:spinnerMode="dialog"
-                      android:textAlignment="center" />
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginStart="10dp"
+                      android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hd1"
+                            android:textColor="#459A68"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/huddersfield_deals_for_you"/>
+                        </LinearLayout>
+
+                  <!-- <Spinner
+                       android:id="@+id/choice_spinner"
+                       android:layout_width="150dp"
+                       android:layout_height="40dp"
+                       android:layout_alignParentBottom="true"
+                       android:layout_centerInParent="true"
+                       android:layout_marginBottom="45dp"
+                       android:background="@drawable/spinner_rounded"
+                       android:focusable="auto"
+                       android:prompt="@string/spinner_prompt"
+                       android:spinnerMode="dialog"
+                       android:textAlignment="center" />-->
+
             </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
@@ -53,20 +88,22 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_weight="3"
-                      android:orientation="horizontal">
+                      android:orientation="horizontal"
+                      android:baselineAligned="false">
 
                         <LinearLayout
+                            android:id="@+id/electronics_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
+                            android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"
                             android:orientation="vertical">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
                                   android:orientation="vertical">
 
@@ -76,34 +113,32 @@
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/computer"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-
-                                        android:text="Electronics" />
+                                        android:text="@string/electronics" />
 
                               </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/fashion_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
+                            android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"
                             android:orientation="vertical">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
-                                  android:orientation="vertical"
-                                  android:paddingLeft="10dp"
-                                  android:paddingRight="10dp">
+                                  android:orientation="vertical">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -111,48 +146,46 @@
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/highheels"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-
-                                        android:text="Fashion" />
+                                        android:text="@string/fashion" />
 
                               </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/entertainment_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
+                            android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"
                             android:orientation="vertical">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
-                                  android:orientation="vertical"
-                                  android:paddingLeft="10dp"
-                                  android:paddingRight="10dp">
+                                  android:orientation="vertical">
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="40dp"
                                         android:layout_height="34dp"
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/cinema"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:text="Entertainment" />
+                                        android:text="@string/entertainment" />
 
                               </LinearLayout>
                         </LinearLayout>
@@ -165,17 +198,18 @@
                       android:orientation="horizontal">
 
                         <LinearLayout
+                            android:id="@+id/education_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
+                            android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"
                             android:orientation="vertical">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
                                   android:orientation="vertical">
 
@@ -185,34 +219,32 @@
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/chemistry"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-
-                                        android:text="Education" />
+                                        android:text="@string/education" />
 
                               </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/travel_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
+                            android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"
                             android:orientation="vertical">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
-                                  android:orientation="vertical"
-                                  android:paddingLeft="10dp"
-                                  android:paddingRight="10dp">
+                                  android:orientation="vertical">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -220,33 +252,32 @@
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/plane"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-
-                                        android:text="Travel" />
+                                        android:text="@string/travel" />
 
                               </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/food_drink_button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/linearclickable"
                             android:clickable="true"
                             android:focusable="true"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:foreground="?android:attr/selectableItemBackground">
 
                               <LinearLayout
                                   android:layout_width="match_parent"
-                                  android:layout_height="100dp"
+                                  android:layout_height="85dp"
                                   android:background="@drawable/custom_border"
-                                  android:orientation="vertical"
-                                  android:paddingLeft="10dp">
+                                  android:orientation="vertical">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -254,13 +285,13 @@
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
                                         android:src="@drawable/fastfood"
-                                        android:tint="@color/colorPrimaryDark" />
+                                        android:tint="#459A68" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:text="Food" />
+                                        android:text="@string/food" />
 
                               </LinearLayout>
                         </LinearLayout>
@@ -284,20 +315,57 @@
                       android:paddingTop="5dp"
                       android:paddingBottom="5dp">
 
+
                         <ImageView
-                            android:layout_width="wrap_content"
+                            android:layout_width="30dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
-                            android:src="@drawable/star" />
+                            android:src="@drawable/pin"
+                            android:tint="#FDB50D"
+                            android:layout_marginStart="5dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Featured"
+                            android:text="@string/nearby_deals"
                             android:textSize="22sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"/>
+                  </LinearLayout>
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="160dp"
+                      android:src="@drawable/map"
+                      android:clickable="true"
+                      android:focusable="true"
+                      android:foreground="?android:attr/selectableItemBackground"/>
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="15dp"
+                      android:orientation="horizontal"
+                      android:paddingTop="5dp"
+                      android:paddingBottom="5dp">
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/star"
+                            android:layout_marginStart="5dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/featured"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"/>
                         <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
@@ -330,20 +398,22 @@
                       android:paddingBottom="5dp">
 
                         <ImageView
-                            android:layout_width="wrap_content"
+                            android:layout_width="30dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
                             android:src="@drawable/popular"
-                            android:tint="#FDB50D"/>
+                            android:tint="#FDB50D"
+                            android:layout_marginStart="5dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Trending"
+                            android:text="@string/trending"
                             android:textSize="22sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"/>
                         <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
@@ -376,19 +446,22 @@
                       android:paddingBottom="5dp">
 
                         <ImageView
-                            android:layout_width="wrap_content"
+                            android:layout_width="30dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
-                            android:src="@drawable/new_icon" />
+                            android:src="@drawable/new_icon"
+                            android:layout_marginStart="5dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="New"
+                            android:text="@string/new_title"
                             android:textSize="22sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp" />
                         <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
