@@ -16,6 +16,16 @@
     <string name="search_button">search_button</string>
     <string name="hd1">HD1</string>
     <string name="menu">menu</string>
+    <string name="hello_blank_fragment">Blank</string>
+    <string name="swipe_left_for_register">New User? Swipe Left</string>
+    <string name="login">Login</string>
+    <string name="password">Enter Password</string>
+    <string name="e_mail">Email Address</string>
+    <string name="tag">Sign up today! \nStart saving money on the brands you love.</string>
+    <string name="swipe_right_for_login">Existing user? Swipe right</string>
+    <string name="register">Sign Up</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Title and Name</string>
     <string-array name="spinner_array">
         <item>Suggestions</item>
         <item>Featured</item>

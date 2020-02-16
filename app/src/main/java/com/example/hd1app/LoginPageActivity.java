@@ -9,20 +9,20 @@ import android.widget.Button;
 
 public class LoginPageActivity extends AppCompatActivity {
 
-    Button openHomePageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        openHomePageButton = findViewById(R.id.buttonHomePage);
+        configureNextButton();
+    }
 
-        openHomePageButton.setOnClickListener(new View.OnClickListener() {
+    private void configureNextButton(){
+        Button nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HomePage.class);
-                startActivity(intent);
+                startActivity(new Intent(LoginPageActivity.this, LoginFragment.class));
             }
-        });
-    }
+        });}
 }
