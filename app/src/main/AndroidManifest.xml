@@ -12,6 +12,11 @@
         <activity android:name=".MoreDealsActivity"></activity>
         <activity android:name=".LoginPageActivity" />
         <activity android:name=".HomePage" />
+
+        <activity android:name=".RegisterFragment">
+        </activity>
+        <activity android:name=".LoginFragment">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
