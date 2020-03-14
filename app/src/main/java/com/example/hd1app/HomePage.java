@@ -232,16 +232,13 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         } catch (Exception exception) {
             Toast.makeText(this, "Unable to find difference", Toast.LENGTH_SHORT).show();
             return null;
+        }
+    }
 
-
-//            public void onClick2 (View v){
-//                if (v.getId() == R.id.MapButton) {
-//                    Intent intent = new Intent(HomePage.this, MapActivity.class);
-//                    startActivity(intent);
-//
-//
-//                }
-//            }
+    public void onClick2 (View v) {
+        if (v.getId() == R.id.MapButton) {
+            Intent intent = new Intent(HomePage.this, MapActivity.class);
+            startActivity(intent);
         }
     }
 }
