@@ -54,6 +54,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+
         //Get components
         //spinner = findViewById(R.id.choice_spinner);
         featuredRecyclerView = findViewById(R.id.featured_recycler_view);
@@ -93,14 +94,17 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         educationButton.setOnClickListener(this);
         foodDrinkButton.setOnClickListener(this);
 
+
     }
-    public void fillRecyclerDealList(ArrayList<Deal> dealList, RecyclerView recyclerView){
+
+    public void fillRecyclerDealList(ArrayList<Deal> dealList, RecyclerView recyclerView) {
         CustomAdapter adapter = new CustomAdapter(this, dealList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
-    public void initSpinner(Spinner spinner){
+
+    public void initSpinner(Spinner spinner) {
         //Add string array to the spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.spinner_array, android.R.layout.simple_spinner_item);
@@ -113,33 +117,33 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     /**
      * This method creates test deals
      */
-    public void createTestDeals(){
+    public void createTestDeals() {
         //Further we will extract it from our database
-        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Apple -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1);
-        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020,2,29),30,5);
-        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Something deal", "45HHs6hgshHG", new Date(2020,2,29),50,10);
+        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Apple -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 10, 1);
+        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020, 2, 29), 30, 5);
+        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Something deal", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 10);
         allPossibleDeals.add(electronicsDeal);
         allPossibleDeals.add(electronicsDeal1);
         allPossibleDeals.add(electronicsDeal2);
 
-        FashionDeal fashionDeal = new FashionDeal("Next -10%", "45HHs6hgshHG", new Date(2020,2,29),100,10);
-        FashionDeal fashionDeal1 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20);
-        FashionDeal fashionDeal2 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1);
+        FashionDeal fashionDeal = new FashionDeal("Next -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 100, 10);
+        FashionDeal fashionDeal1 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 20);
+        FashionDeal fashionDeal2 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 10, 1);
         allPossibleDeals.add(fashionDeal);
         allPossibleDeals.add(fashionDeal1);
         allPossibleDeals.add(fashionDeal2);
 
-        FoodDeal foodDeal = new FoodDeal("KFC deal", "45HHs6hgshHG", new Date(2020,2,29),240,100);
-        FoodDeal foodDeal1 = new FoodDeal("McDonalds offer", "45HHs6hgshHG", new Date(2020,2,29),430,200);
-        FoodDeal foodDeal2 = new FoodDeal("Subway deal", "45HHs6hgshHG", new Date(2020,2,29),1000,5);
+        FoodDeal foodDeal = new FoodDeal("KFC deal", "45HHs6hgshHG", new Date(2020, 2, 29), 240, 100);
+        FoodDeal foodDeal1 = new FoodDeal("McDonalds offer", "45HHs6hgshHG", new Date(2020, 2, 29), 430, 200);
+        FoodDeal foodDeal2 = new FoodDeal("Subway deal", "45HHs6hgshHG", new Date(2020, 2, 29), 1000, 5);
         allPossibleDeals.add(foodDeal);
         allPossibleDeals.add(foodDeal1);
         allPossibleDeals.add(foodDeal2);
 
 
-        EducationDeal educationDeal = new EducationDeal("Deal 15% off", "45HHs6hgshHG", new Date(2020,2,29),50,50);
-        EducationDeal educationDeal1 = new EducationDeal("Blabla membership", "45HHs6hgshHG", new Date(2020,2,29),100,25);
-        EducationDeal educationDeal2 = new EducationDeal("HelloWorld -50%", "45HHs6hgshHG", new Date(2020,2,29),500,50);
+        EducationDeal educationDeal = new EducationDeal("Deal 15% off", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 50);
+        EducationDeal educationDeal1 = new EducationDeal("Blabla membership", "45HHs6hgshHG", new Date(2020, 2, 29), 100, 25);
+        EducationDeal educationDeal2 = new EducationDeal("HelloWorld -50%", "45HHs6hgshHG", new Date(2020, 2, 29), 500, 50);
         allPossibleDeals.add(educationDeal);
         allPossibleDeals.add(educationDeal1);
         allPossibleDeals.add(educationDeal2);
@@ -148,25 +152,25 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     /**
      * This method sorts the deals by categories and status of the deals.
      * This may be changed in the future, because it is very basic sorting.
-     *
+     * <p>
      * Key issues:
-     *
+     * <p>
      * Can they repeat in different categories? (for instance, same deal in both trending and featured lists)
      * What algorithm of sorting deals by these categories?
      */
-    public void sortDeals(){
-        for (Deal deal : allPossibleDeals){
-            if(deal instanceof ElectronicsDeal){
+    public void sortDeals() {
+        for (Deal deal : allPossibleDeals) {
+            if (deal instanceof ElectronicsDeal) {
                 electronicsDeals.add(deal);
-            }else if(deal instanceof  FashionDeal){
+            } else if (deal instanceof FashionDeal) {
                 fashionDeals.add(deal);
-            }else if(deal instanceof FoodDeal){
+            } else if (deal instanceof FoodDeal) {
                 foodDeals.add(deal);
             }
-            if(deal.getLikes()>10){
+            if (deal.getLikes() > 10) {
                 featuredDeals.add(deal);
             }
-            if(deal.getNumOfUses()>50){
+            if (deal.getNumOfUses() > 50) {
                 trendingDeals.add(deal);
             }
             /*if(deal.getLikes()>10){
@@ -180,23 +184,28 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(HomePage.this, MoreDealsActivity.class);
-        if(v.getId() == R.id.electronics_button){
+        if (v.getId() == R.id.electronics_button) {
             intent.putExtra("category_title", "Electronics");
         } else if (v.getId() == R.id.fashion_button) {
             intent.putExtra("category_title", "Fashion");
-        }
-        else if (v.getId() == R.id.education_button) {
+        } else if (v.getId() == R.id.education_button) {
             intent.putExtra("category_title", "Education");
-        }else if (v.getId() == R.id.entertainment_button) {
+        } else if (v.getId() == R.id.entertainment_button) {
             intent.putExtra("category_title", "Entertainment");
-        }
-        else if (v.getId() == R.id.food_drink_button) {
+        } else if (v.getId() == R.id.food_drink_button) {
             intent.putExtra("category_title", "Food & Drink");
-        }
-        else if (v.getId() == R.id.travel_button) {
+        } else if (v.getId() == R.id.travel_button) {
             intent.putExtra("category_title", "Travel");
         }
         startActivity(intent);
         overridePendingTransition(R.anim.enter, R.anim.exit);
+    }
+
+    public void onClick2(View v) {
+        if (v.getId() == R.id.MapButton) {
+            Intent intent = new Intent(HomePage.this, MapActivity.class);
+            startActivity(intent);
+
+        }
     }
 }

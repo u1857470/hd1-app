@@ -26,6 +26,7 @@
     <string name="register">Sign Up</string>
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Title and Name</string>
+    <string name="access_token">pk.eyJ1Ijoicm96emE5OCIsImEiOiJjazZjNXAzMzkwb2w0M25tdm9mb2ZicTQ2In0.d6QujO6UUPt6KxleZHCjng</string>
     <string-array name="spinner_array">
         <item>Suggestions</item>
         <item>Featured</item>
