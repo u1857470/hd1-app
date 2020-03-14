@@ -16,6 +16,8 @@
     <string name="search_button">search_button</string>
     <string name="hd1">HD1</string>
     <string name="menu">menu</string>
+    <string name="i_am_looking_for">I am looking for...</string>
+    <string name="take_a_survey_win_50">Take a survey, win 50£</string>
     <string name="hello_blank_fragment">Blank</string>
     <string name="swipe_left_for_register">New User? Swipe Left</string>
     <string name="login">Login</string>
@@ -27,6 +29,7 @@
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Title and Name</string>
     <string name="access_token">pk.eyJ1Ijoicm96emE5OCIsImEiOiJjazZjNXAzMzkwb2w0M25tdm9mb2ZicTQ2In0.d6QujO6UUPt6KxleZHCjng</string>
+    >>>>>>> 2ed30ffa884fad47bd6bb29c1a57d54e0ef48b19
     <string-array name="spinner_array">
         <item>Suggestions</item>
         <item>Featured</item>

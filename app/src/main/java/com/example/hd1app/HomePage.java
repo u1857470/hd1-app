@@ -1,9 +1,5 @@
 package com.example.hd1app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,18 +8,23 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.hd1app.DealCategories.AllPossibleDeals;
-import com.example.hd1app.DealCategories.NewDeals;
 import com.example.hd1app.DealCategories.FeaturedDeals;
+import com.example.hd1app.DealCategories.NewDeals;
 import com.example.hd1app.DealCategories.TrendingDeals;
 import com.example.hd1app.Models.Deal;
 import com.example.hd1app.Models.EducationDeal;
 import com.example.hd1app.Models.ElectronicsDeal;
 import com.example.hd1app.Models.FashionDeal;
 import com.example.hd1app.Models.FoodDeal;
-import com.example.hd1app.Models.TravelDeal;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
@@ -38,9 +39,9 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     AllPossibleDeals allPossibleDeals;
 
     //Categories
-    ArrayList<Deal> foodDeals;
-    ArrayList<Deal> electronicsDeals;
-    ArrayList<Deal> fashionDeals;
+    public static ArrayList<Deal> foodDeals;
+    public static ArrayList<Deal> electronicsDeals;
+    public static ArrayList<Deal> fashionDeals;
 
     LinearLayout electronicsButton;
     LinearLayout fashionButton;
@@ -118,32 +119,41 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
      * This method creates test deals
      */
     public void createTestDeals() {
-        //Further we will extract it from our database
-        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Apple -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 10, 1);
-        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020, 2, 29), 30, 5);
-        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Something deal", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 10);
+
+        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Apple -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1, R.drawable.nike);
+        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020,2,29),30,5,R.drawable.nike);
+        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Something deal", "45HHs6hgshHG", new Date(2020,2,29),50,10,R.drawable.nike);
+
         allPossibleDeals.add(electronicsDeal);
         allPossibleDeals.add(electronicsDeal1);
         allPossibleDeals.add(electronicsDeal2);
 
-        FashionDeal fashionDeal = new FashionDeal("Next -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 100, 10);
-        FashionDeal fashionDeal1 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 20);
-        FashionDeal fashionDeal2 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020, 2, 29), 10, 1);
+
+        FashionDeal fashionDeal = new FashionDeal("Next -10%", "45HHs6hgshHG", new Date(2020,2,29),100,10,R.drawable.nextlogo);
+        FashionDeal fashionDeal1 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20,R.drawable.adidaslogo);
+        FashionDeal fashionDeal2 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1,R.drawable.nike);
+        FashionDeal fashionDeal3 = new FashionDeal("H&M -5%", "45HHs6hgshHG", new Date(2020,2,29),100,10,R.drawable.hm);
+        FashionDeal fashionDeal4 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20,R.drawable.adidaslogo);
+        FashionDeal fashionDeal5 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1,R.drawable.nextlogo);
+
         allPossibleDeals.add(fashionDeal);
         allPossibleDeals.add(fashionDeal1);
         allPossibleDeals.add(fashionDeal2);
-
-        FoodDeal foodDeal = new FoodDeal("KFC deal", "45HHs6hgshHG", new Date(2020, 2, 29), 240, 100);
-        FoodDeal foodDeal1 = new FoodDeal("McDonalds offer", "45HHs6hgshHG", new Date(2020, 2, 29), 430, 200);
-        FoodDeal foodDeal2 = new FoodDeal("Subway deal", "45HHs6hgshHG", new Date(2020, 2, 29), 1000, 5);
+        allPossibleDeals.add(fashionDeal3);
+        allPossibleDeals.add(fashionDeal4);
+        allPossibleDeals.add(fashionDeal5);
+//
+        FoodDeal foodDeal = new FoodDeal("KFC deal", "45HHs6hgshHG", new Date(2020,2,29),240,100,R.drawable.nike);
+        FoodDeal foodDeal1 = new FoodDeal("McDonalds offer", "45HHs6hgshHG", new Date(2020,2,29),430,200,R.drawable.nike);
+        FoodDeal foodDeal2 = new FoodDeal("Subway deal", "45HHs6hgshHG", new Date(2020,2,29),1000,5,R.drawable.nike);
         allPossibleDeals.add(foodDeal);
         allPossibleDeals.add(foodDeal1);
         allPossibleDeals.add(foodDeal2);
 
 
-        EducationDeal educationDeal = new EducationDeal("Deal 15% off", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 50);
-        EducationDeal educationDeal1 = new EducationDeal("Blabla membership", "45HHs6hgshHG", new Date(2020, 2, 29), 100, 25);
-        EducationDeal educationDeal2 = new EducationDeal("HelloWorld -50%", "45HHs6hgshHG", new Date(2020, 2, 29), 500, 50);
+        EducationDeal educationDeal = new EducationDeal("Deal 15% off", "45HHs6hgshHG", new Date(2020, 2, 29), 50, 50,R.drawable.nike);
+        EducationDeal educationDeal1 = new EducationDeal("Blabla membership", "45HHs6hgshHG", new Date(2020, 2, 29), 100, 25,R.drawable.nike);
+        EducationDeal educationDeal2 = new EducationDeal("HelloWorld -50%", "45HHs6hgshHG", new Date(2020, 2, 29), 500, 50,R.drawable.nike);
         allPossibleDeals.add(educationDeal);
         allPossibleDeals.add(educationDeal1);
         allPossibleDeals.add(educationDeal2);
@@ -173,14 +183,15 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             if (deal.getNumOfUses() > 50) {
                 trendingDeals.add(deal);
             }
-            /*if(deal.getLikes()>10){
+            int integerDifference = Integer.parseInt(calculateDateDifference(deal));
+            if(integerDifference < 3){
                 newDeals.add(deal);
-            }*/
+            }
         }
         fillRecyclerDealList(featuredDeals, featuredRecyclerView);
         fillRecyclerDealList(trendingDeals, trendingRecyclerView);
+        fillRecyclerDealList(newDeals, newRecyclerView);
     }
-
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(HomePage.this, MoreDealsActivity.class);
@@ -200,12 +211,37 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         startActivity(intent);
         overridePendingTransition(R.anim.enter, R.anim.exit);
     }
+    public String calculateDateDifference(Deal deal) {
+        try {
+            SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
+            //Current date
+            Date date = Calendar.getInstance().getTime();
+            //Date when deal was created
+            Date dealCreatedDate = deal.getDateAdded();
+            //Convert dates to strings
+            String strCurrentDate = dates.format(date);
+            String strDealDate = dates.format(dealCreatedDate);
+            //Parse dates
+            Date date1 = dates.parse(strCurrentDate);
+            Date date2 = dates.parse(strDealDate);
 
-    public void onClick2(View v) {
-        if (v.getId() == R.id.MapButton) {
-            Intent intent = new Intent(HomePage.this, MapActivity.class);
-            startActivity(intent);
+            long difference = Math.abs(date1.getTime() - date2.getTime());
+            long differenceDates = difference / (24 * 60 * 60 * 1000);
 
+            return Long.toString(differenceDates);
+        } catch (Exception exception) {
+            Toast.makeText(this, "Unable to find difference", Toast.LENGTH_SHORT).show();
+            return null;
+
+
+//            public void onClick2 (View v){
+//                if (v.getId() == R.id.MapButton) {
+//                    Intent intent = new Intent(HomePage.this, MapActivity.class);
+//                    startActivity(intent);
+//
+//
+//                }
+//            }
         }
     }
 }

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class FoodDeal extends Deal {
 
-    public FoodDeal(String title, String discountCode, Date expirationDate, int numOfUses, int likes) {
-        super(title, discountCode, expirationDate, numOfUses, likes);
+    public FoodDeal(String title, String discountCode, Date expirationDate, int numOfUses, int likes, int imagePath) {
+        super(title, discountCode, expirationDate, numOfUses, likes, imagePath);
     }
 }

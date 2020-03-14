@@ -10,14 +10,24 @@ public class Deal {
     private Date dateAdded;
     private Date expirationDate;
     private int likes;
+    private int image;
 
-    public Deal(String title, String discountCode, Date expirationDate, int numOfUses, int likes) {
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int imagePath) {
+        this.image = imagePath;
+    }
+
+    public Deal(String title, String discountCode, Date expirationDate, int numOfUses, int likes, int image) {
         this.title = title;
         this.discountCode = discountCode;
         this.numOfUses = numOfUses;
         this.dateAdded = getCurrentDate();
         this.expirationDate = expirationDate;
         this.likes = likes;
+        this.image = image;
     }
     public Deal(String title){
         this.title = title;

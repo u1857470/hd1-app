@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoreDealsActivity">
+    tools:context=".MoreDealsActivity"
+    android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:elevation="20dp">
-
-      <!--  <ImageView
-            android:id="@+id/back_arrow"
-            android:layout_width="23dp"
-            android:layout_height="40dp"
-            android:src="@drawable/left"
-            android:tint="#949494"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true" />-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,12 +21,7 @@
             android:layout_marginRight="1dp"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="10dp">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:src="@drawable/search"
-                android:tint="#949494"
-                android:layout_marginRight="10dp"/>
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="40dp"
@@ -58,19 +41,82 @@
             android:layout_marginStart="20dp"
             android:layout_marginBottom="10dp"/>
 
-        <!-- <Spinner
-             android:id="@+id/choice_spinner"
-             android:layout_width="150dp"
-             android:layout_height="40dp"
-             android:layout_alignParentBottom="true"
-             android:layout_centerInParent="true"
-             android:layout_marginBottom="45dp"
-             android:background="@drawable/spinner_rounded"
-             android:focusable="auto"
-             android:prompt="@string/spinner_prompt"
-             android:spinnerMode="dialog"
-             android:textAlignment="center" />-->
-
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/coverimg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_corners"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:background="@drawable/transparent_bg"
+                    android:drawableLeft="@drawable/searchsmall"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/i_am_looking_for"
+                    android:includeFontPadding="true"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:drawableStart="@drawable/searchsmall"
+                    android:paddingStart="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/close"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:tint="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="10 deals found"
+                android:layout_marginStart="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/more_deals_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
