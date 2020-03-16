@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainNotification extends AppCompatActivity {
-    private final String CHANNEL_ID = "personal notification";
+    private final String CHANNEL_ID = "personal_notification";
     private final int NOTIFICATION_ID = 928;
 
     @Override
@@ -18,8 +18,9 @@ public class MainNotification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification);
     }
-    public void NotifyMe (View view)
+    public void notifyMe (View view)
     {
+        createNotificationChannel();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_notifications_active_black_24dp);
         builder.setContentTitle("HD1");
@@ -32,16 +33,16 @@ public class MainNotification extends AppCompatActivity {
 
     private void createNotificationChannel()
     {
-        CharSequence name = "HD1";
-        String description = "Include all new deals that come up";
+        CharSequence name = "Personal notification";
+        String description = "Include all personal notificaion";
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,name,importance);
+        NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name,importance);
 
-        channel.setDescription(description);
+        notificationChannel.setDescription(description);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.createNotificationChannel(channel);
+        notificationManager.createNotificationChannel(notificationChannel);
     }
 
 }
